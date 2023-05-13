@@ -1,3 +1,4 @@
+using TgAI.Services;
 using TgAI.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<BotSettings>(
     builder.Configuration.GetSection("BotSettings")
 );
+builder.Services.AddScoped<BotService>();
 
 var app = builder.Build();
 
