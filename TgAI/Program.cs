@@ -14,8 +14,6 @@ builder.Services.Configure<BotSettings>(
     builder.Configuration.GetSection("BotSettings")
 );
 
-builder.Services.AddScoped<IBotService>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
