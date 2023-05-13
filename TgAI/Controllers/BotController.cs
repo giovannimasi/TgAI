@@ -12,7 +12,7 @@ public sealed class BotController : Controller
     private readonly ITelegramBotClient _botClient;
     private readonly string _token;
 
-    public BotController(BotService botService)
+    public BotController(IBotService botService)
     {
         _botClient = botService._client;
         _token = botService._token;
