@@ -16,4 +16,13 @@ public sealed class BotService
         _client.SetWebhookAsync(settings.Value.WebhookUrl.Replace("{token}", settings.Value.Token));
         _token = settings.Value.Token;
     }
+
+}
+
+public interface IBotService
+{
+    TelegramBotClient _client { get; set; }
+    string _token { get; set; }
+    void BotService(IOptions<BotSettings> settings);
+
 }

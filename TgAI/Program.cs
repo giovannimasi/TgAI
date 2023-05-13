@@ -13,9 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<BotSettings>(
     builder.Configuration.GetSection("BotSettings")
 );
-builder.Services.Configure<BotService>(
-    builder.Configuration.GetSection("BotService")
-);
+
+builder.Services.AddScoped<IBotService>();
 
 var app = builder.Build();
 
