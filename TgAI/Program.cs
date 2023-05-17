@@ -15,7 +15,7 @@ builder.Services.Configure<BotSettings>(
     builder.Configuration.GetSection("BotSettings")
 );
 
-builder.Services.ConfigureOptions<BotService>();
+builder.Services.AddScoped<BotService, BotService>();
 
 var app = builder.Build();
 
