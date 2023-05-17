@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Options;
 using TgAI.Services;
 using TgAI.Settings;
 
@@ -5,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<BotSettings>(
     builder.Configuration.GetSection("BotSettings")
 );
+builder.Services.AddScoped<BotService, BotService>();
+
 
 var app = builder.Build();
 

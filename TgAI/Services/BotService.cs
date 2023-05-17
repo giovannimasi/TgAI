@@ -18,11 +18,3 @@ public sealed class BotService
     }
 
 }
-
-public interface IBotService
-{
-    TelegramBotClient _client { get; set; }
-    string _token { get; set; }
-    void BotService(IOptions<BotSettings> settings);
-
-}
